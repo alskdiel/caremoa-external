@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: external
+    labels:
+        run: external 
+spec:
+    ports:
+    - port: 8099
+      targetPort: 80
+      protocol: TCP
+      name: http
+    - port: 443
+      protocol: TCP
+      name: https
+    selector:
+        run: external
+    type: LoadBalancer 

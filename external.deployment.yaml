@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: external 
+    labels:
+        app: external
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: external
+    template:
+        metadata:
+            labels:
+                app: external
+        spec:
+            containers:
+            - name: external
+              image: hyeonjaecho/external
+              ports:
+              - containerPort: 8099
