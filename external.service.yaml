@@ -10,9 +10,6 @@ spec:
       targetPort: 8099
       protocol: TCP
       name: http
-    - port: 443
-      protocol: TCP
-      name: https
     selector:
         run: external
     type: LoadBalancer 
